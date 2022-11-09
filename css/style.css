@@ -1,0 +1,161 @@
+
+:root{
+    --detail--color:yellow;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: rgb(22, 22, 22);
+    /* Remover o heigth, esta setado apenas para mostrar o efeito do scroll */
+    height: 3000px;
+}
+
+header{
+    width: 96%;
+    background-color: #fff;
+    position: fixed;
+    top: 2rem;left: 50%;
+    transform:translateX(-50%);
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.header-active{
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 .1rem 3rem rgba(0, 0, 0, .3);
+}
+
+header .header-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header  img{
+    width: 35px;
+    height: 35px;
+}
+
+header label{
+    font-size: 2rem;
+    color: #393939;
+    font-weight: 600;
+    transition: 0.2s all;
+    margin-left: 5px;
+}
+
+
+
+header a .detail-color{
+    color: var(--detail--color);
+}
+
+header
+.nav-bar
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header
+.nav-bar
+ul li{
+    margin: 0 1rem;
+}
+
+header
+.nav-bar
+ul li a{
+    font-size: 2rem;
+    color: #393939;
+    font-weight: 600;
+    transition: 0.2s all;
+}
+
+header
+.nav-bar
+ul li a:hover{
+    color: var(--detail--color);
+    transition: 0.2s all;
+}
+
+header
+.nav-bar
+ul li a .detail-color{
+    font-size: 2rem;
+    color: var(--detail--color);
+    font-weight: 600;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    /* color: var(--detail--color); */
+    color: #393939;
+    cursor: pointer;
+    display: none;
+    transition: .2s;
+}
+
+header .fa-times{
+    transform: rotate(180deg);
+}
+
+
+@media (max-width: 768px){
+
+    html{
+     font-size: 50%;
+    }
+    header .fa-bars{
+        display: block;
+    }
+    header .nav-bar{
+        position: fixed;
+        top: -100rem; left: 0;
+        width: 100%;
+        background: #fff;
+        border-radius: 1rem;
+        opacity: 0;
+        transition: .2s linear;
+    }
+    header .nav-bar ul{
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+    header .nav-bar ul li{
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    header .nav-bar ul li a{
+    font-size: 3rem;
+    display: block;
+    }
+    header .nav-toggle{
+        top: 8rem;
+        opacity: 1;
+    }
+}
+
